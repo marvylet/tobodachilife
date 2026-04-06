@@ -1,8 +1,8 @@
-function Pet () {
+function Spanek () {
     return (
         <>
         </>
     )
 }
 
-export default Pet
+export default Spanek
