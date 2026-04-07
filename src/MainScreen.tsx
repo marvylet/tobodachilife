@@ -1,4 +1,4 @@
-function MainMenu () {
+function MainScreen () {
     return (
         <>
             <div>
@@ -8,4 +8,4 @@ function MainMenu () {
     )
 }
 
-export default MainMenu
+export default MainScreen
