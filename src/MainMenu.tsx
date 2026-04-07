@@ -1,4 +1,5 @@
 function MainMenu () {
+    //menu
     return (
         <>
             <div>
