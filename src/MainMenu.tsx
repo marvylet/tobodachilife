@@ -1,10 +1,12 @@
 import type {ShowMenu} from "./types.ts";
 import {useState} from "react";
+import MainScreen from "./MainScreen.tsx";
 
 const MainMenu: React.FC<ShowMenu> = ({isDrawn}) => {
     const [isVisible, setIsVisible] = useState<boolean>(false);
     if(isVisible){
-        return <></>;
+        return <MainScreen isDrawn={true}/>;
+;
     }
     return (
         <>

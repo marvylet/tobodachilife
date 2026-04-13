@@ -1,7 +1,5 @@
 import MainMenu from "./MainMenu.tsx";
-import MainScreen from "./MainScreen.tsx";
 import InfoScreen from "./InfoScreen.tsx";
-import Shop from "./Shop.tsx";
 
 //main layout of the website
 function Layout () {
@@ -11,9 +9,7 @@ function Layout () {
         <>
             <div className={"main-menu"} style={{backgroundColor:"#FFFBF1"}}>
                 <MainMenu isDrawn={false}/>
-                <MainScreen/>
                 <InfoScreen/>
-                <Shop/>
             </div>
         </>
     )
