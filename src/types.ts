@@ -4,3 +4,6 @@ export type Pet = {
     stesti: number;
     typ: string;
 }
+export interface ShowMenu{
+    isDrawn: boolean;
+}

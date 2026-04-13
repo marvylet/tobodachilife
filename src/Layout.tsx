@@ -9,8 +9,8 @@ function Layout () {
     // depending on variable we will enable their visibility and functionality
     return (
         <>
-            <div>
-                <MainMenu/>
+            <div className={"main-menu"} style={{backgroundColor:"#FFFBF1"}}>
+                <MainMenu isDrawn={false}/>
                 <MainScreen/>
                 <InfoScreen/>
                 <Shop/>
