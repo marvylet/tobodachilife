@@ -1,6 +1,24 @@
-function Pet () {
+interface PetProps {
+    maxHlad: number;
+    hlad: number;
+    setHlad: (hlad: number) => void;
+
+    maxEnergie: number;
+    energie: number;
+    setEnergie: (energie: number) => void;
+
+    maxStesti: number;
+    stesti: number;
+    setStesti: (stesti: number) => void;
+}
+
+function Pet (props: PetProps) {
+
     return (
         <>
+            <p>Hlad: {props.maxHlad}/{props.hlad}</p>
+            <p>Energie: {props.maxEnergie}/{props.energie}</p>
+            <p>Stesti: {props.maxStesti}/{props.stesti}</p>
         </>
     )
 }
