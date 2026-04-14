@@ -1,6 +1,6 @@
 import type {ShowMenu} from "./types.ts";
 import {useState} from "react";
-const Shop: React.FC<ShowMenu> = ({isDrawn}) => {
+const Shop: React.FC<ShowMenu> = ({isDrawn, setVisibility}) => {
     const [isVisible, setIsVisible] = useState<boolean>(false);
     if(isVisible){
         return <></>;
@@ -69,6 +69,9 @@ const Shop: React.FC<ShowMenu> = ({isDrawn}) => {
                     </button>
                 </div>
                 <hr/>
+                <button onClick={() => setVisibility(false)} style={{backgroundColor:"#FFB2B2"}}>
+                    Quit
+                </button>
             </div>
         </>
     )

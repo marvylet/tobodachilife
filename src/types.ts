@@ -6,4 +6,5 @@ export type Pet = {
 }
 export interface ShowMenu{
     isDrawn: boolean;
+    setVisibility: (visible: boolean) => void;
 }

@@ -5,8 +5,7 @@ import MainScreen from "./MainScreen.tsx";
 const MainMenu: React.FC<ShowMenu> = ({isDrawn}) => {
     const [isVisible, setIsVisible] = useState<boolean>(false);
     if(isVisible){
-        return <MainScreen isDrawn={true}/>;
-;
+        return <MainScreen isDrawn={true} setVisibility={setIsVisible}/>;
     }
     return (
         <>
