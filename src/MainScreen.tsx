@@ -7,6 +7,7 @@ const MainScreen: React.FC<ShowMenu> = ({isDrawn}) => {
     if(isVisible){
         return <Shop isDrawn={true}/>;
     }
+
     return (
         <>
             <div className={"minu-Container"} style={{backgroundColor:"#FFF2D0"}}>
