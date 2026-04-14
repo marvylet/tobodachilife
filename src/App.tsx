@@ -1,6 +1,7 @@
 import './App.css'
 import Pet from './Pet.tsx'
 import {useEffect, useState} from "react";
+import Layout from "./Layout.tsx";
 
 function App() {
   const maxHlad = 50;
@@ -75,6 +76,7 @@ function App() {
           maxHlad={maxHlad} setHlad={setHlad} hlad={hlad}
           maxEnergie={maxEnergie} setEnergie={setEnergie} energie={energie}
           maxStesti={maxStesti} setStesti={setStesti} stesti={stesti} />
+        <Layout/>
     </>
   )
 }
