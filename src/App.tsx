@@ -1,9 +1,11 @@
 import './App.css'
+import Layout from "./Layout.tsx";
 
 function App() {
 
   return (
     <>
+        <Layout/>
     </>
   )
 }
