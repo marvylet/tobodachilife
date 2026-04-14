@@ -8,7 +8,9 @@ function Layout () {
     return (
         <>
             <div className={"main-menu"} style={{backgroundColor:"#FFFBF1"}}>
-                <MainMenu isDrawn={false}/>
+                <MainMenu isDrawn={false} setVisibility={function (): void {
+                    throw new Error("Function not implemented.");
+                }}/>
                 <InfoScreen/>
             </div>
         </>
