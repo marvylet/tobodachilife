@@ -13,14 +13,15 @@ interface PetProps {
 }
 
 function Pet (props: PetProps) {
-
     return (
         <>
-            <p>Hlad: {props.maxHlad}/{props.hlad}</p>
-            <p>Energie: {props.maxEnergie}/{props.energie}</p>
-            <p>Stesti: {props.maxStesti}/{props.stesti}</p>
+            <img src={"src/Docs/costume3.png"}/>
         </>
     )
+    /*  <p>Hlad: {props.maxHlad}/{props.hlad}</p>
+    <p>Energie: {props.maxEnergie}/{props.energie}</p>
+    <p>Stesti: {props.maxStesti}/{props.stesti}</p>
+    */
 }
 
 export default Pet

@@ -6,37 +6,17 @@ const Shop: React.FC<ShowMenu> = ({isDrawn, setVisibility}) => {
                 <div className={"logo"}>
                     {isDrawn}
                 </div>
-                <div style={{backgroundColor:"#FFB2B2"}}>
-                    <button  style={{backgroundColor:"#FFB2B2"}}>
+                <div className={"shopBox"}>
+                    <button>
                         item
                     </button>
-                    <button  style={{backgroundColor:"#FFB2B2"}}>
+                    <button>
                         item
                     </button>
-                    <br/>
-                    <button  style={{backgroundColor:"#FFB2B2"}}>
+                    <button>
                         item
                     </button>
-                    <button  style={{backgroundColor:"#FFB2B2"}}>
-                        item
-                    </button>
-                </div>
-                <hr/>
-                <div className={"logo"}>
-                    {isDrawn}
-                </div>
-                <div style={{backgroundColor:"#FFB2B2"}}>
-                    <button  style={{backgroundColor:"#FFB2B2"}}>
-                        item
-                    </button>
-                    <button  style={{backgroundColor:"#FFB2B2"}}>
-                        item
-                    </button>
-                    <br/>
-                    <button  style={{backgroundColor:"#FFB2B2"}}>
-                        item
-                    </button>
-                    <button  style={{backgroundColor:"#FFB2B2"}}>
+                    <button>
                         item
                     </button>
                 </div>
@@ -44,18 +24,35 @@ const Shop: React.FC<ShowMenu> = ({isDrawn, setVisibility}) => {
                 <div className={"logo"}>
                     {isDrawn}
                 </div>
-                <div style={{backgroundColor:"#FFB2B2"}}>
-                    <button  style={{backgroundColor:"#FFB2B2"}}>
+                <div className={"shopBox"}>
+                    <button>
                         item
                     </button>
-                    <button  style={{backgroundColor:"#FFB2B2"}}>
+                    <button>
                         item
                     </button>
-                    <br/>
-                    <button  style={{backgroundColor:"#FFB2B2"}}>
+                    <button>
                         item
                     </button>
-                    <button  style={{backgroundColor:"#FFB2B2"}}>
+                    <button>
+                        item
+                    </button>
+                </div>
+                <hr/>
+                <div className={"logo"}>
+                    {isDrawn}
+                </div>
+                <div className={"shopBox"}>
+                    <button>
+                        item
+                    </button>
+                    <button>
+                        item
+                    </button>
+                    <button>
+                        item
+                    </button>
+                    <button>
                         item
                     </button>
                 </div>
