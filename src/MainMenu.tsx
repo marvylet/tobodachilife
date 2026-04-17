@@ -12,7 +12,7 @@ const MainMenu: React.FC<ShowMenu> = ({isDrawn}) => {
             <div className={"minu-Container"} style={{backgroundColor:"#FFF2D0"}}>
                 <div className={"logo"}>
                     {isDrawn}
-                    <img src="src/Docs/costume5.png" alt="Logo" width="262.4" height="88"/>
+                    <img src="src/Docs/costume5.png" alt="Logo"  className={"logo"}/>
                 </div>
                 <button onClick={() => setIsVisible(true)} style={{backgroundColor:"#FFB2B2"}}>
                     Start game

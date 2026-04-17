@@ -3,10 +3,28 @@
   min-height: 100vh;
   font-size: 16px;
   display: grid;
+  grid-template-areas: "container";
+  grid-template-rows: 1fr;
 }
+.logo{
+  grid-area: logo;
+  width: 262.4px;
+  height: 88px;
+  margin: 25px auto;
+  display: block;
+  image-rendering: pixelated;
 
+}
 .minu-Container{
-  border: #3a362f solid 2px;
+  grid-area: container;
+  border: #ae2d2d solid 2px;
+  display: grid;
+  grid-template-areas:
+          "logo"
+          "button"
+          "divider"
+          "box";
+  grid-template-rows: 200px 1fr 5px 2fr;
   border-radius: 5px;
   margin: 10px;
   padding: 10px;
@@ -16,6 +34,13 @@
 button{
   min-width: 50px;
   min-height: 30px;
+  max-height: 70px;
+  border-radius: 5px;
+  border: #ae2d2d solid 2px;
+  width: 50%;
+  max-width: 200%;
+  margin: 0 auto;
+  display: block;
 }
 
 @media (min-width: 768px) {
