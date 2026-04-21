@@ -4,7 +4,9 @@ export type Pet = {
     stesti: number;
     typ: string;
 }
-export interface ShowMenu{
-    isDrawn: boolean;
-    setVisibility: (visible: boolean) => void;
+
+export interface ShowMenu {
+    isDrawn: boolean,
+    setVisibility: (visible: boolean) => void,
+    petNum?: number
 }

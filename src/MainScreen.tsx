@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import Shop from "./Shop.tsx";
 import Pet from "./Pet.tsx";
 
-const MainScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility}) => {
+const MainScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility, petNum} ) => {
     const [isVisible, setIsVisible] = useState<boolean>(false);
 
 
@@ -134,7 +134,8 @@ const MainScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility}) => {
                         <Pet
                             maxHlad={maxHlad} setHlad={setHlad} hlad={hlad}
                             maxEnergie={maxEnergie} setEnergie={setEnergie} energie={energie}
-                            maxStesti={maxStesti} setStesti={setStesti} stesti={stesti} />
+                            maxStesti={maxStesti} setStesti={setStesti} stesti={stesti}
+                            petNum={petNum}/>
                     </div>
                 </div>
                 <div className={"botHalf"}>

@@ -1,5 +1,4 @@
 import MainMenu from "./MainMenu.tsx";
-import InfoScreen from "./InfoScreen.tsx";
 
 //main layout of the website
 function Layout () {
@@ -11,7 +10,6 @@ function Layout () {
                 <MainMenu isDrawn={false} setVisibility={function (): void {
                     throw new Error("Function not implemented.");
                 }}/>
-                <InfoScreen/>
             </div>
         </>
     )

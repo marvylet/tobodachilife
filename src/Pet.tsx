@@ -12,16 +12,21 @@ interface PetProps {
     maxStesti: number;
     stesti: number;
     setStesti: (stesti: number) => void;
+
+    petNum: number;
 }
 
+/*
 function getRandomInt(max: number) {
     return Math.floor(Math.random() * max);
 }
 
 const pet = getRandomInt(4) + 1;
-const petImg = "src/Docs/costume" + pet + ".png";
+*/
+
 
 function Pet (props: PetProps) {
+    const petImg = "src/Docs/costume" + props.petNum + ".png";
     return (
         <>
             <img src={petImg}/>
