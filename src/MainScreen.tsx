@@ -16,8 +16,42 @@ const MainScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility}) => {
     const maxStesti = 50;
     const [stesti, setStesti] = useState(maxStesti);
 
-    //let ending = false;
+    const [info, setInfo] = useState("Mazlicek zatim nebyl nakrmen, nebyl poslan spat a nehral jste si s nim.");
 
+    /**
+     * method for changing the pets attributes
+     * @param value - by how much the value will be increased (except for energy which has a set value)
+     * @param pet - which value will be changed (1 - hunger, 2 - happiness, 3 - energy/sleep)
+     */
+    function AddValue(value: number, pet: number) {
+        switch(pet){
+            case 1:
+                if((hlad + value) < maxHlad){
+                    setHlad(hlad + value);
+                    setInfo("Mazlicek byl nakrmen.");
+                }else setInfo("Moc jidla pro mazlicka.");
+                break;
+
+            case 2:
+                if((stesti + value) < maxStesti){
+                    setStesti(stesti + value);
+                    setInfo("Hral jste si s mazlickem.");
+                }else setInfo("Mazlicek si zatim nechce tak moc hrat.");
+                break;
+
+            case 3:
+                if(energie <= 25){
+                    setEnergie(energie + 20);
+                    setInfo("Mazlicek byl poslan jit spat.");
+                }else setInfo("Mazlicek neni tak unaveny.");
+                break;
+        }
+    }
+
+    /**
+     *
+     * methods for intervals
+     */
     function UpdateHlad(){
         if(hlad > maxHlad){
             setHlad(maxHlad);
