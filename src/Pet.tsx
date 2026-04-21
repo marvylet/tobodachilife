@@ -1,3 +1,5 @@
+
+
 interface PetProps {
     maxHlad: number;
     hlad: number;
@@ -12,10 +14,17 @@ interface PetProps {
     setStesti: (stesti: number) => void;
 }
 
+function getRandomInt(max: number) {
+    return Math.floor(Math.random() * max);
+}
+
+const pet = getRandomInt(4) + 1;
+const petImg = "src/Docs/costume" + pet + ".png";
+
 function Pet (props: PetProps) {
     return (
         <>
-            <img src={"src/Docs/costume3.png"}/>
+            <img src={petImg}/>
         </>
     )
     /*  <p>Hlad: {props.maxHlad}/{props.hlad}</p>

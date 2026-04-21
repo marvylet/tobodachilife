@@ -118,15 +118,15 @@ const MainScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility}) => {
                     <div className={"indicators"}>
                         <p>
                             jidlo:
-                            <progress id="file" value={hlad * 2} max="100"> 32% </progress>
+                            <progress id="file" value={hlad} max={maxHlad}> 32% </progress>
                         </p>
                         <p>
                             zabava:
-                            <progress id="file" value={stesti * 2} max="100"> 52% </progress>
+                            <progress id="file" value={stesti} max={maxStesti}> 52% </progress>
                         </p>
                         <p>
                             spanek:
-                            <progress id="file" value={energie * 2} max="100"> 92% </progress>
+                            <progress id="file" value={energie} max={maxEnergie}> 92% </progress>
                         </p>
                     </div>
                     <div className={"mazlicek-div"}>
@@ -139,14 +139,15 @@ const MainScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility}) => {
                 </div>
                 <div className={"botHalf"}>
                     <div className={"ofset"}>
+                        <p>{info}</p>
                         <div className={"playerActions"}>
-                            <button style={{backgroundColor:"#FFB2B2"}}>
+                            <button style={{backgroundColor:"#FFB2B2"}} onClick={() => AddValue(5, 1)}>
                                 Nakrmit
                             </button>
-                            <button style={{backgroundColor:"#FFB2B2"}}>
+                            <button style={{backgroundColor:"#FFB2B2"}} onClick={() => AddValue(7, 2)}>
                                 Hrat si
                             </button>
-                            <button style={{backgroundColor:"#FFB2B2"}}>
+                            <button style={{backgroundColor:"#FFB2B2"}} onClick={() => AddValue(5, 3)}>
                                 Poslat spat
                             </button>
                         </div>
