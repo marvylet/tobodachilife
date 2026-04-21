@@ -3,26 +3,154 @@
   min-height: 100vh;
   font-size: 16px;
   display: grid;
+  grid-template-areas: "container";
+  grid-template-rows: 1fr;
 }
+.logo{
+  grid-area: logo;
+  width: 262.4px;
+  height: 88px;
+  margin: 25px auto;
+  display: block;
+  image-rendering: pixelated;
 
-.minu-Container{
-  border: #3a362f solid 2px;
+}
+.shop-Container{
+  grid-area: container;
+  border: #ae2d2d solid 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border-radius: 5px;
   margin: 10px;
   padding: 10px;
   font-size: 16px;
 }
+.minu-Container{
+  grid-area: container;
+  border: #ae2d2d solid 2px;
+  display: grid;
+  grid-template-areas:
+          "logo"
+          "button"
+          "divider"
+          "box";
+  grid-template-rows: 200px 1fr 5px 2fr;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
+}
+.mazlicek-div{
+  grid-area: pet;
+  img{
+    display: block;
+    margin: 20px auto;
+    min-width: 80%;
+    min-height: 80%
+  }
+}
+.shop-quit{
+  grid-area: buttons;
+}
 
+.pet-Container{
+  img{
+    image-rendering: pixelated;
+    height: 100%;
+  }
+  grid-area: container;
+  border: #ae2d2d solid 2px;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
+  display: grid;
+  grid-template-areas:
+          "topHalf"
+          "botHalf";
+  grid-template-rows: 4fr 3fr;
+  button{
+    min-height: 60px;
+  }
+}
+.topHalf{
+  border: #ae2d2d solid 2px;
+  background-color:#FFB2B2;
+  border-radius: 5px;
+}
+.botHalf{
+  grid-area: botHalf;
+}
+.shopBox{
+  grid-area: box;
+  margin: 5px;
+  height: 100%;
+  width: 100%;
+  border: #ae2d2d solid 2px;
+  background-color:#FFB2B2;
+  border-radius: 5px;
+  button{
+    min-width: 80px;
+    min-height: 80px;
+  }
+  display: flex;
+  justify-content: space-around;
+}
+
+.shopInbox{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+
+.playerActions{
+  display: flex;
+  button{
+    margin: 50px 5px;
+  }
+}
+
+.items{
+  min-height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 button{
+  background-color:#FFB2B2;
   min-width: 50px;
   min-height: 30px;
+  max-height: 70px;
+  border-radius: 5px;
+  border: #ae2d2d solid 2px;
+  width: 50%;
+  max-width: 200%;
+  margin: 0 auto;
+  display: block;
 }
 
 @media (min-width: 768px) {
-  .main-menu {
-    width: 50%;
-    height: 50%;
-    padding: 20px;
+  .ofset{
+    min-width: 100%;
+  }
+  .pet-Container {
+    grid-template-areas:
+          "topHalf botHalf";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+  .indicators{
+    margin-bottom: 50%;
+  }
+  .botHalf{
+    display: flex;
+    align-items: center;
+  }
+  .items{
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
 

@@ -79,45 +79,53 @@ const MainScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility}) => {
 
     return (
         <>
-            <div className={"minu-Container"} style={{backgroundColor:"#FFF2D0"}}>
-                <p>
-                    jidlo:
-                </p>
-                <progress id="file" value="32" max="100"> 32% </progress>
-                <p>
-                    zabava:
-                </p>
-                <progress id="file" value="52" max="100"> 52% </progress>
-                <p>
-                    spanek:
-                </p>
-                <progress id="file" value="92" max="100"> 92% </progress>
-                <div className={"mazlicek-div"}>
-                    {isDrawn}
-                    <Pet
-                        maxHlad={maxHlad} setHlad={setHlad} hlad={hlad}
-                        maxEnergie={maxEnergie} setEnergie={setEnergie} energie={energie}
-                        maxStesti={maxStesti} setStesti={setStesti} stesti={stesti} />
+            <div className={"pet-Container"} style={{backgroundColor:"#FFF2D0"}}>
+                <div className={"topHalf"}>
+                    <div className={"indicators"}>
+                        <p>
+                            jidlo:
+                            <progress id="file" value={hlad * 2} max="100"> 32% </progress>
+                        </p>
+                        <p>
+                            zabava:
+                            <progress id="file" value={stesti * 2} max="100"> 52% </progress>
+                        </p>
+                        <p>
+                            spanek:
+                            <progress id="file" value={energie * 2} max="100"> 92% </progress>
+                        </p>
+                    </div>
+                    <div className={"mazlicek-div"}>
+                        {isDrawn}
+                        <Pet
+                            maxHlad={maxHlad} setHlad={setHlad} hlad={hlad}
+                            maxEnergie={maxEnergie} setEnergie={setEnergie} energie={energie}
+                            maxStesti={maxStesti} setStesti={setStesti} stesti={stesti} />
+                    </div>
                 </div>
-                <hr/>
-                <button style={{backgroundColor:"#FFB2B2"}}>
-                    Nakrmit
-                </button>
-                <button style={{backgroundColor:"#FFB2B2"}}>
-                    Hrat si
-                </button>
-                <button style={{backgroundColor:"#FFB2B2"}}>
-                    Poslat spat
-                </button>
-                <hr/>
-
-                <button onClick={() => setIsVisible(true)} style={{backgroundColor:"#FFB2B2"}}>
-                    Obchod
-                </button>
-                <button onClick={() => setVisibility(false)} style={{backgroundColor:"#FFB2B2"}}>
-                    Quit
-                </button>
-
+                <div className={"botHalf"}>
+                    <div className={"ofset"}>
+                        <div className={"playerActions"}>
+                            <button style={{backgroundColor:"#FFB2B2"}}>
+                                Nakrmit
+                            </button>
+                            <button style={{backgroundColor:"#FFB2B2"}}>
+                                Hrat si
+                            </button>
+                            <button style={{backgroundColor:"#FFB2B2"}}>
+                                Poslat spat
+                            </button>
+                        </div>
+                        <div className={"shop-quit"}>
+                            <button onClick={() => setIsVisible(true)} style={{backgroundColor:"#FFB2B2"}}>
+                                Obchod
+                            </button>
+                            <button onClick={() => setVisibility(false)} style={{backgroundColor:"#FFB2B2"}}>
+                                Quit
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </>
     )
