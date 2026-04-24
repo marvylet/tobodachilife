@@ -15,7 +15,7 @@ const InfoScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility}) => {
     if(isVisible){
         return (
             <>
-                return <MainScreen isDrawn={true} setVisibility={setIsVisible} petNum={petNum}/>;
+                <MainScreen isDrawn={true} setVisibility={setIsVisible} petNum={petNum}/>
             </>
         )
     }
