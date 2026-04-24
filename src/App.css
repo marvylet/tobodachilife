@@ -1,10 +1,11 @@
 .main-menu {
   width: 100%;
   min-height: 100vh;
-  font-size: 16px;
+  font-size: 25px;
   display: grid;
   grid-template-areas: "container";
   grid-template-rows: 1fr;
+  color: white;
 }
 .logo{
   grid-area: logo;
@@ -15,7 +16,19 @@
   image-rendering: pixelated;
 
 }
+.info{
+  margin: 10px;
+  button{
+    min-height: 60px;
+    margin: 30px auto;
+  }
+  display: flex;
+  flex-direction: column;
+  border: #ae2d2d solid 2px;
+  background-color:#FFB2B2;
+}
 .shop-Container{
+  color: white;
   grid-area: container;
   border: #ae2d2d solid 2px;
   display: flex;
@@ -23,15 +36,38 @@
   justify-content: space-between;
   margin: 10px;
   padding: 10px;
-  font-size: 16px;
+  font-size: 25px;
   img{
     image-rendering: pixelated;
     height: 50px;
     max-width: 50px;
+    max-height: 100%;
   }
 }
+progress {
+  border: solid #ae2d2d 2px;
+  width: 400px;
+  height: 30px;
+  background: #FFB2B2;
+  margin: 5px auto;
+  display: block;
+}
+
+progress {
+  color: #E36A6A;
+}
+
+progress::-moz-progress-bar {
+  background: #E36A6A;
+}
+
+progress::-webkit-progress-value {
+  background: #FFB2B2;
+}
+
 .minu-Container{
   grid-area: container;
+  color: white;
   border: #ae2d2d solid 2px;
   display: grid;
   grid-template-areas:
@@ -42,7 +78,7 @@
   grid-template-rows: 200px 1fr 5px 2fr;
   margin: 10px;
   padding: 10px;
-  font-size: 16px;
+  font-size: 25px;
 }
 .mazlicek-div{
   grid-area: pet;
@@ -63,10 +99,11 @@
     height: 100%;
   }
   grid-area: container;
+  color: white;
   border: #ae2d2d solid 2px;
   margin: 10px;
   padding: 10px;
-  font-size: 16px;
+  font-size: 25px;
   display: grid;
   grid-template-areas:
           "topHalf"
@@ -120,6 +157,7 @@
 }
 button{
   background-color:#FFB2B2;
+  font-size: 25px;
   min-width: 50px;
   min-height: 30px;
   max-height: 70px;
@@ -155,6 +193,7 @@ button{
 
 @media (min-width: 1024px) {
   .main-menu {
-    font-size: 18px;
+    font-size: 35px;
   }
 }
+

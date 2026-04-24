@@ -22,7 +22,7 @@ const InfoScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility}) => {
 
     return (
         <>
-            <div className={"botHalf"}>
+            <div className={"info"}>
                 <p>Vyberte si mazlicka:</p>
                 <button onClick={() => {VyberMazlicka(1)}}>
                     {isDrawn}
