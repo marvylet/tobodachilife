@@ -1,3 +1,7 @@
+html{
+  font-family: Brush Script MT, Brush Script Std, cursive;
+}
+
 .main-menu {
   width: 100%;
   min-height: 100vh;
@@ -5,7 +9,7 @@
   display: grid;
   grid-template-areas: "container";
   grid-template-rows: 1fr;
-  color: white;
+  color: #250e0e;
 }
 .logo{
   grid-area: logo;
@@ -28,7 +32,7 @@
   background-color:#FFB2B2;
 }
 .shop-Container{
-  color: white;
+  color: #250e0e;
   grid-area: container;
   border: #ae2d2d solid 2px;
   display: flex;
@@ -64,10 +68,13 @@ progress::-moz-progress-bar {
 progress::-webkit-progress-value {
   background: #FFB2B2;
 }
-
+p{
+  font-family: Andale Mono, monospace;
+  font-weight: 500;
+}
 .minu-Container{
   grid-area: container;
-  color: white;
+  color: #250e0e;
   border: #ae2d2d solid 2px;
   display: grid;
   grid-template-areas:
@@ -99,7 +106,7 @@ progress::-webkit-progress-value {
     height: 100%;
   }
   grid-area: container;
-  color: white;
+  color: #250e0e;
   border: #ae2d2d solid 2px;
   margin: 10px;
   padding: 10px;
@@ -157,6 +164,9 @@ progress::-webkit-progress-value {
 }
 button{
   background-color:#FFB2B2;
+  color: #250e0e;
+  font-family: Andale Mono, monospace;
+  font-weight: 500;
   font-size: 25px;
   min-width: 50px;
   min-height: 30px;
