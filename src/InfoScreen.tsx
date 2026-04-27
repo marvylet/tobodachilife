@@ -15,7 +15,7 @@ const InfoScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility}) => {
     if(isVisible){
         return (
             <>
-                <MainScreen isDrawn={true} setVisibility={setIsVisible} petNum={petNum}/>
+                <MainScreen isDrawn={true} setVisibility={setVisibility} petNum={petNum}/>
             </>
         )
     }
@@ -24,22 +24,30 @@ const InfoScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility}) => {
         <>
             <div className={"info"}>
                 <p>Vyberte si mazlicka:</p>
-                <button onClick={() => {VyberMazlicka(1)}}>
+                <button onClick={() => {
+                    VyberMazlicka(1);
+                }}>
                     {isDrawn}
                     Kocka
                 </button>
 
-                <button onClick={() => {VyberMazlicka(2)}}>
+                <button onClick={() => {
+                    VyberMazlicka(2);
+                }}>
                     {isDrawn}
                     Kralik
                 </button>
 
-                <button onClick={() => {VyberMazlicka(3)}}>
+                <button onClick={() => {
+                    VyberMazlicka(3);
+                }}>
                     {isDrawn}
                     Dinosaurus
                 </button>
 
-                <button onClick={() => {VyberMazlicka(4)}}>
+                <button onClick={() => {
+                    VyberMazlicka(4);
+                }}>
                     {isDrawn}
                     Pes
                 </button>
