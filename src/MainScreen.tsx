@@ -25,7 +25,7 @@ const MainScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility, petNum} ) => {
     useEffect(() => {
         const tick = setTimeout(() => {
             setMoney(money + 2);
-        }, 1000);
+        }, 7500);
         return () => clearTimeout(tick);
 
     }, [money]);
