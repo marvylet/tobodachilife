@@ -6,17 +6,29 @@ import Pet from "./Pet.tsx";
 const MainScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility, petNum} ) => {
     const [isVisible, setIsVisible] = useState<boolean>(false);
 
+    const [money, setMoney] = useState(0);
 
     const maxHlad = 50;
     const [hlad, setHlad] = useState(maxHlad);
+    const [hladValue, setHladValue] = useState(2);
 
     const maxEnergie = 50;
     const [energie, setEnergie] = useState(maxEnergie);
+    const [energieValue, setEnergieValue] = useState(3);
 
     const maxStesti = 50;
     const [stesti, setStesti] = useState(maxStesti);
+    const [stestiValue, setStestiValue] = useState(10);
 
     const [info, setInfo] = useState("Mazlicek zatim nebyl nakrmen, nebyl poslan spat a nehral jste si s nim.");
+
+    useEffect(() => {
+        const tick = setTimeout(() => {
+            setMoney(money + 2);
+        }, 1000);
+        return () => clearTimeout(tick);
+
+    }, [money]);
 
     /**
      * method for changing the pets attributes
@@ -40,8 +52,8 @@ const MainScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility, petNum} ) => {
                 break;
 
             case 3:
-                if(energie <= 25){
-                    setEnergie(energie + 20);
+                if(energie <= 35 && (energie + value) < maxEnergie){
+                    setEnergie(energie + value);
                     setInfo("Mazlicek byl poslan jit spat.");
                 }else setInfo("Mazlicek neni tak unaveny.");
                 break;
@@ -108,7 +120,13 @@ const MainScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility, petNum} ) => {
     }, [stesti]);
 
     if(isVisible){
-        return <Shop isDrawn={true} setVisibility={setIsVisible}/>;
+        return <Shop isDrawn={true} setVisibility={setIsVisible}
+                     maxHlad={maxHlad} hlad={hlad}  setHlad={setHlad}
+                     maxEnergie={maxEnergie} energie={energie} setEnergie={setEnergie}
+                     maxStesti={maxStesti} stesti={stesti} setStesti={setStesti}
+                     money={money} setMoney={setMoney}
+                     hladValue={hladValue} energieValue={energieValue} stestiValue={stestiValue}
+                     setHladValue={setHladValue} setEnergieValue={setEnergieValue} setStestiValue={setStestiValue}/>;
     }
 
     return (
@@ -142,13 +160,13 @@ const MainScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility, petNum} ) => {
                 <div className={"botHalf"}>
                     <div className={"ofset"}>
                         <div className={"playerActions"}>
-                            <button style={{backgroundColor:"#FFB2B2"}} onClick={() => AddValue(5, 1)}>
+                            <button style={{backgroundColor:"#FFB2B2"}} onClick={() => AddValue(hladValue, 1)}>
                                 Nakrmit
                             </button>
-                            <button style={{backgroundColor:"#FFB2B2"}} onClick={() => AddValue(7, 2)}>
+                            <button style={{backgroundColor:"#FFB2B2"}} onClick={() => AddValue(stestiValue, 2)}>
                                 Hrat si
                             </button>
-                            <button style={{backgroundColor:"#FFB2B2"}} onClick={() => AddValue(5, 3)}>
+                            <button style={{backgroundColor:"#FFB2B2"}} onClick={() => AddValue(energieValue, 3)}>
                                 Poslat spat
                             </button>
                         </div>
