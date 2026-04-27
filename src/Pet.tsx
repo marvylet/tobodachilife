@@ -1,5 +1,3 @@
-
-
 interface PetProps {
     maxHlad: number;
     hlad: number;
@@ -16,26 +14,27 @@ interface PetProps {
     petNum: number;
 }
 
-/*
-function getRandomInt(max: number) {
-    return Math.floor(Math.random() * max);
-}
-
-const pet = getRandomInt(4) + 1;
-*/
-
-
 function Pet (props: PetProps) {
     const petImg = "src/Docs/costume" + props.petNum + ".png";
+    const petRIPImg = "src/assets/costume" + props.petNum + "RIP.png";
+
+    const energieHurt = props.maxEnergie / 4;
+    const stestiHurt = props.maxStesti / 4;
+    const hladHurt = props.maxHlad / 4;
+
+    if(props.energie <= energieHurt || props.stesti <= stestiHurt || props.hlad <= hladHurt){
+        return (
+            <>
+                <img src={petRIPImg} alt="Mazlicek umira"/>
+            </>
+        )
+    }
+
     return (
         <>
-            <img src={petImg}/>
+            <img src={petImg} alt="Obrazek mazlicka, je v poradku momentalne"/>
         </>
     )
-    /*  <p>Hlad: {props.maxHlad}/{props.hlad}</p>
-    <p>Energie: {props.maxEnergie}/{props.energie}</p>
-    <p>Stesti: {props.maxStesti}/{props.stesti}</p>
-    */
 }
 
 export default Pet
