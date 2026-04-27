@@ -174,7 +174,7 @@ const MainScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility, petNum} ) => {
                             <button onClick={() => setIsVisible(true)} style={{backgroundColor:"#FFB2B2"}}>
                                 Obchod
                             </button>
-                            <button onClick={() => setVisibility(false)} style={{backgroundColor:"#FFB2B2"}}>
+                            <button onClick={() => {setVisibility(false); setVisibility(false)}} style={{backgroundColor:"#FFB2B2"}}>
                                 Quit
                             </button>
                         </div>
