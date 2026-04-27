@@ -128,6 +128,7 @@ const MainScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility, petNum} ) => {
                             spanek:
                             <progress id="file" value={energie} max={maxEnergie}> 92% </progress>
                         </p>
+                        <p>{info}</p>
                     </div>
                     <div className={"mazlicek-div"}>
                         {isDrawn}
@@ -140,7 +141,6 @@ const MainScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility, petNum} ) => {
                 </div>
                 <div className={"botHalf"}>
                     <div className={"ofset"}>
-                        <p>{info}</p>
                         <div className={"playerActions"}>
                             <button style={{backgroundColor:"#FFB2B2"}} onClick={() => AddValue(5, 1)}>
                                 Nakrmit

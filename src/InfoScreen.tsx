@@ -15,14 +15,14 @@ const InfoScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility}) => {
     if(isVisible){
         return (
             <>
-                return <MainScreen isDrawn={true} setVisibility={setIsVisible} petNum={petNum}/>;
+                <MainScreen isDrawn={true} setVisibility={setIsVisible} petNum={petNum}/>
             </>
         )
     }
 
     return (
         <>
-            <div className={"botHalf"}>
+            <div className={"info"}>
                 <p>Vyberte si mazlicka:</p>
                 <button onClick={() => {VyberMazlicka(1)}}>
                     {isDrawn}
