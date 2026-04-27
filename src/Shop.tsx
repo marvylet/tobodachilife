@@ -9,7 +9,7 @@ const Shop: React.FC<ShowMenu> = ({isDrawn, setVisibility, money, setMoney, setH
         switch (stat) {
             case 1:
                 if (hladValue != undefined) {
-                    if (money != undefined && money >= price) {
+                    if (money != undefined && money >= price && setHladValue != undefined && setMoney != undefined) {
                         setHladValue(hladValue * boost);
                         setMoney(money - price);
                         setInfo("Byl koupen boost pro krmeni mazlicka za " + price);
@@ -20,7 +20,7 @@ const Shop: React.FC<ShowMenu> = ({isDrawn, setVisibility, money, setMoney, setH
                 break;
             case 2:
                 if (stestiValue != undefined) {
-                    if (money != undefined && money >= price) {
+                    if (money != undefined && money >= price && setStestiValue != undefined && setMoney != undefined) {
                         setStestiValue(stestiValue * boost);
                         setMoney(money - price);
                         setInfo("Byl koupen boost pro hrani si s mazlickem za " + price);
@@ -31,7 +31,7 @@ const Shop: React.FC<ShowMenu> = ({isDrawn, setVisibility, money, setMoney, setH
                     break;
                 case 3:
                     if (energieValue != undefined) {
-                        if (money != undefined && money >= price) {
+                        if (money != undefined && money >= price  && setEnergieValue != undefined && setMoney != undefined) {
                             setEnergieValue(energieValue * boost);
                             setMoney(money - price);
                             setInfo("Byl koupen boost pro spanek mazlicka za " + price);

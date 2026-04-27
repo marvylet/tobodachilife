@@ -11,7 +11,7 @@ interface PetProps {
     stesti: number;
     setStesti: (stesti: number) => void;
 
-    petNum: number;
+    petNum?: number;
 }
 
 function Pet (props: PetProps) {
