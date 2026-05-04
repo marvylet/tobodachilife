@@ -19,7 +19,7 @@ interface PetProps {
 
 import type {ShowMenu} from "./types.ts";
 
-const Save: React.FC<ShowMenu> = ({setVisibility, money, hlad, hladValue, energie, energieValue, stesti, stestiValue} ) => {
+const Save: React.FC<ShowMenu> = ({setVisibility, money, hlad, hladValue, energie, energieValue, stesti, stestiValue, petNum} ) => {
 /*
     const handleFileSelected = (file? : Blob) => {
         const fileReader = new FileReader();
@@ -35,7 +35,7 @@ const Save: React.FC<ShowMenu> = ({setVisibility, money, hlad, hladValue, energi
 
  */
     const download = () =>{
-        const fileData = money + "-" + hlad + "-" + hladValue + "-" + energie + "-" + energieValue + "-" + stesti + "-" + stestiValue;
+        const fileData = money + "-" + hlad + "-" + hladValue + "-" + energie + "-" + energieValue + "-" + stesti + "-" + stestiValue + "-" + petNum;
         const blob = new Blob([fileData], { type: "text/plain" });
         const url = URL.createObjectURL(blob);
         const link = document.createElement("a");

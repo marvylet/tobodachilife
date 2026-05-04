@@ -4,27 +4,20 @@ import Shop from "./Shop.tsx";
 import Pet from "./Pet.tsx";
 import Save from "./Save.tsx";
 
-const MainScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility, petNum} ) => {
+const MainScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility, petNum, money, setMoney, hlad, setHlad, hladValue, setHladValue, energie, setEnergie, energieValue, setEnergieValue, stesti, setStesti, stestiValue, setStestiValue} ) => {
     const [isVisible, setIsVisible] = useState<boolean>(false);
 
-    const [money, setMoney] = useState(0);
-
     const maxHlad = 50;
-    const [hlad, setHlad] = useState(maxHlad);
-    const [hladValue, setHladValue] = useState(2);
 
     const maxEnergie = 50;
-    const [energie, setEnergie] = useState(maxEnergie);
-    const [energieValue, setEnergieValue] = useState(3);
 
     const maxStesti = 50;
-    const [stesti, setStesti] = useState(maxStesti);
-    const [stestiValue, setStestiValue] = useState(10);
 
     const [info, setInfo] = useState("Mazlicek zatim nebyl nakrmen, nebyl poslan spat a nehral jste si s nim.");
 
     useEffect(() => {
         const tick = setTimeout(() => {
+            if(setMoney != null && money != null)
             setMoney(money + 2);
         }, 7500);
         return () => clearTimeout(tick);
@@ -39,6 +32,7 @@ const MainScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility, petNum} ) => {
     function AddValue(value: number, pet: number) {
         switch(pet){
             case 1:
+                if(hlad != null && setHlad != null)
                 if((hlad + value) < maxHlad){
                     setHlad(hlad + value);
                     setInfo("Mazlicek byl nakrmen.");
@@ -46,6 +40,7 @@ const MainScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility, petNum} ) => {
                 break;
 
             case 2:
+                if(stesti != null && setStesti != null)
                 if((stesti + value) < maxStesti){
                     setStesti(stesti + value);
                     setInfo("Hral jste si s mazlickem.");
@@ -53,6 +48,7 @@ const MainScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility, petNum} ) => {
                 break;
 
             case 3:
+                if(energie != null && setEnergie != null)
                 if(energie <= 35 && (energie + value) < maxEnergie){
                     setEnergie(energie + value);
                     setInfo("Mazlicek byl poslan jit spat.");
@@ -66,14 +62,16 @@ const MainScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility, petNum} ) => {
      * methods for intervals
      */
     function UpdateHlad(){
-        if(hlad > maxHlad){
-            setHlad(maxHlad);
-        }
-        if ((hlad - 2) <= 0) {
-            setHlad(0);
-            //ending = true;
-        } else {
-            setHlad(hlad - 2);
+        if(hlad != null && setHlad != null) {
+            if (hlad > maxHlad) {
+                setHlad(maxHlad);
+            }
+            if ((hlad - 2) <= 0) {
+                setHlad(0);
+                //ending = true;
+            } else {
+                setHlad(hlad - 2);
+            }
         }
     }
     useEffect(() => {
@@ -85,13 +83,15 @@ const MainScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility, petNum} ) => {
     }, [hlad]);
 
     function UpdateEnergie(){
-        if(energie > maxEnergie){
-            setEnergie(maxEnergie);
-        }
-        if ((energie - 2) <= 0) {
-            setEnergie(0);
-        } else {
-            setEnergie(energie - 2);
+        if(energie != null && setEnergie != null) {
+            if (energie > maxEnergie) {
+                setEnergie(maxEnergie);
+            }
+            if ((energie - 2) <= 0) {
+                setEnergie(0);
+            } else {
+                setEnergie(energie - 2);
+            }
         }
     }
     useEffect(() => {
@@ -103,13 +103,15 @@ const MainScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility, petNum} ) => {
     }, [energie]);
 
     function UpdateStesti(){
-        if(stesti > maxStesti){
-            setStesti(maxStesti);
-        }
-        if ((stesti - 2) <= 0) {
-            setStesti(0);
-        } else {
-            setStesti(stesti - 2);
+        if(stesti != null && setStesti != null) {
+            if (stesti > maxStesti) {
+                setStesti(maxStesti);
+            }
+            if ((stesti - 2) <= 0) {
+                setStesti(0);
+            } else {
+                setStesti(stesti - 2);
+            }
         }
     }
     useEffect(() => {
@@ -130,61 +132,64 @@ const MainScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility, petNum} ) => {
                      setHladValue={setHladValue} setEnergieValue={setEnergieValue} setStestiValue={setStestiValue}/>;
     }
 
-    return (
-        <>
-            <div className={"pet-Container"} style={{backgroundColor:"#FFF2D0"}}>
-                <div className={"topHalf"}>
-                    <div className={"indicators"}>
-                        <p>
-                            jidlo:
-                            <progress id="file" value={hlad} max={maxHlad}> 32% </progress>
-                        </p>
-                        <p>
-                            zabava:
-                            <progress id="file" value={stesti} max={maxStesti}> 52% </progress>
-                        </p>
-                        <p>
-                            spanek:
-                            <progress id="file" value={energie} max={maxEnergie}> 92% </progress>
-                        </p>
-                        <p>{info}</p>
-                    </div>
-                    <div className={"mazlicek-div"}>
-                        {isDrawn}
-                        <Pet
-                            maxHlad={maxHlad} setHlad={setHlad} hlad={hlad}
-                            maxEnergie={maxEnergie} setEnergie={setEnergie} energie={energie}
-                            maxStesti={maxStesti} setStesti={setStesti} stesti={stesti}
-                            petNum={petNum}/>
-                    </div>
-                </div>
-                <div className={"botHalf"}>
-                    <div className={"ofset"}>
-                        <div className={"playerActions"}>
-                            <button style={{backgroundColor:"#FFB2B2"}} onClick={() => AddValue(hladValue, 1)}>
-                                Nakrmit
-                            </button>
-                            <button style={{backgroundColor:"#FFB2B2"}} onClick={() => AddValue(stestiValue, 2)}>
-                                Hrat si
-                            </button>
-                            <button style={{backgroundColor:"#FFB2B2"}} onClick={() => AddValue(energieValue, 3)}>
-                                Poslat spat
-                            </button>
+    if(setHlad != null && hlad != null && setEnergie != null && setStesti != null && energie != null && stesti != null && hladValue != null && stestiValue != null && energieValue != null) {
+        return (
+            <>
+                <div className={"pet-Container"} style={{backgroundColor: "#FFF2D0"}}>
+                    <div className={"topHalf"}>
+                        <div className={"indicators"}>
+                            <p>
+                                jidlo:
+                                <progress id="file" value={hlad} max={maxHlad}> 32% </progress>
+                            </p>
+                            <p>
+                                zabava:
+                                <progress id="file" value={stesti} max={maxStesti}> 52% </progress>
+                            </p>
+                            <p>
+                                spanek:
+                                <progress id="file" value={energie} max={maxEnergie}> 92% </progress>
+                            </p>
+                            <p>{info}</p>
                         </div>
-                        <div className={"shop-quit"}>
-                            <button onClick={() => setIsVisible(true)} style={{backgroundColor:"#FFB2B2"}}>
-                                Obchod
-                            </button>
-                            <Save isDrawn={true} setVisibility={setVisibility}
-                                  money={money} hlad={hlad} hladValue={hladValue}
-                                  energie={energie} energieValue={energieValue}
-                                  stesti={stesti} stestiValue={stestiValue}></Save>
+                        <div className={"mazlicek-div"}>
+                            {isDrawn}
+                            <Pet
+                                maxHlad={maxHlad} setHlad={setHlad} hlad={hlad}
+                                maxEnergie={maxEnergie} setEnergie={setEnergie} energie={energie}
+                                maxStesti={maxStesti} setStesti={setStesti} stesti={stesti}
+                                petNum={petNum}/>
                         </div>
                     </div>
+                    <div className={"botHalf"}>
+                        <div className={"ofset"}>
+                            <div className={"playerActions"}>
+                                <button style={{backgroundColor: "#FFB2B2"}} onClick={() => AddValue(hladValue, 1)}>
+                                    Nakrmit
+                                </button>
+                                <button style={{backgroundColor: "#FFB2B2"}} onClick={() => AddValue(stestiValue, 2)}>
+                                    Hrat si
+                                </button>
+                                <button style={{backgroundColor: "#FFB2B2"}} onClick={() => AddValue(energieValue, 3)}>
+                                    Poslat spat
+                                </button>
+                            </div>
+                            <div className={"shop-quit"}>
+                                <button onClick={() => setIsVisible(true)} style={{backgroundColor: "#FFB2B2"}}>
+                                    Obchod
+                                </button>
+                                <Save isDrawn={true} setVisibility={setVisibility}
+                                      money={money} hlad={hlad} hladValue={hladValue}
+                                      energie={energie} energieValue={energieValue}
+                                      stesti={stesti} stestiValue={stestiValue}
+                                      petNum={petNum}></Save>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </>
-    )
+            </>
+        )
+    }
 }
 
 export default MainScreen

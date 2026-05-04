@@ -2,20 +2,24 @@ import type {ShowMenu} from "./types.ts";
 import {useState} from "react";
 import MainScreen from "./MainScreen.tsx";
 
-const InfoScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility}) => {
+const InfoScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility, money, setMoney, hlad, setHlad, hladValue, setHladValue, energie, setEnergie, energieValue, setEnergieValue, stesti, setStesti, stestiValue, setStestiValue, setPet, petNum}) => {
     const [isVisible, setIsVisible] = useState<boolean>(false);
-    const [petNum, setPet] = useState(0);
-
 
     function VyberMazlicka(pett: number){
-        setIsVisible(true);
-        setPet(pett);
+        if(setPet != null) {
+            setIsVisible(true);
+            setPet(pett);
+        }
     }
 
     if(isVisible){
         return (
             <>
-                <MainScreen isDrawn={true} setVisibility={setVisibility} petNum={petNum}/>
+                <MainScreen isDrawn={true} setVisibility={setVisibility} petNum={petNum}
+                money={money} setMoney={setMoney}
+                hlad={hlad} setHlad={setHlad} hladValue={hladValue} setHladValue={setHladValue}
+                energie={energie} setEnergie={setEnergie} energieValue={energieValue} setEnergieValue={setEnergieValue}
+                stesti={stesti} setStesti={setStesti} stestiValue={stestiValue} setStestiValue={setStestiValue}/>
             </>
         )
     }

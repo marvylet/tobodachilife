@@ -9,6 +9,7 @@ export interface ShowMenu {
     isDrawn: boolean,
     setVisibility: (visible: boolean) => void,
     petNum?: number
+    setPet?: (petNum: number) => void;
 
     maxHlad?: number;
     hlad?: number;
@@ -32,5 +33,7 @@ export interface ShowMenu {
     setHladValue?: (hladValue: number) => void;
     setEnergieValue?: (energieValue: number) => void;
     setStestiValue?: (stestiValue: number) => void;
+
+    setIsLoadSuccess?: (isLoadSuccess: boolean) => void;
 
 }

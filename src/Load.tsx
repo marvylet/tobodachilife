@@ -17,7 +17,9 @@ interface PetProps {
 
  */
 
-function Load() {
+import type {ShowMenu} from "./types.ts";
+
+const Load: React.FC<ShowMenu> = ({setVisibility, setMoney, setHlad, setHladValue, setEnergie, setEnergieValue, setStesti, setStestiValue, setPet, setIsLoadSuccess} ) => {
 
     const handleFileSelected = (file? : Blob) => {
         const fileReader = new FileReader();
@@ -28,6 +30,27 @@ function Load() {
                 //console.log(data.toString().split("-"));
                 const dataList = data.toString().split("-");
                 console.log(dataList);
+                if(dataList.length == 8 && setMoney != null && setHlad != null && setHladValue != null && setEnergie != null && setEnergieValue != null && setStesti != null && setStestiValue != null && setPet != null){
+                    setVisibility(true);
+
+                    setMoney(Number(dataList[0]));
+                    setHlad(Number(dataList[1]));
+                    setHladValue(Number(dataList[2]));
+                    setEnergie(Number(dataList[3]));
+                    setEnergieValue(Number(dataList[4]));
+                    setStesti(Number(dataList[5]));
+                    setStestiValue(Number(dataList[6]));
+                    setPet(Number(dataList[7]));
+
+                    if(setIsLoadSuccess != null) {
+                        setIsLoadSuccess(true);
+                    }
+                }else {
+                    if(setIsLoadSuccess != null) {
+                        setIsLoadSuccess(false);
+                    }
+                    console.log("Error pri nacitani dat ze souboru");
+                }
             }
         };
         if(file != null)
@@ -43,5 +66,6 @@ function Load() {
         </>
     )
 }
+
 
 export default Load
