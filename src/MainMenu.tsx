@@ -49,7 +49,7 @@ const MainMenu: React.FC<ShowMenu> = ({isDrawn}) => {
             <div className={"minu-Container"} style={{backgroundColor:"#FFF2D0"}}>
                 <div className={"logo"}>
                     {isDrawn}
-                    <img src="public/assets/title.png" alt="Logo" className={"logo"}/>
+                    <img src={`${import.meta.env.BASE_URL}assets/title.png`} alt="Logo" className={"logo"}/>
                 </div>
                 <button onClick={() => setIsVisible(true)} style={{backgroundColor:"#FFB2B2"}}>
                     Začít hru
