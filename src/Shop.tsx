@@ -113,7 +113,7 @@ const Shop: React.FC<ShowMenu> = ({isDrawn, setVisibility, money, setMoney, setH
                     </div>
                 </div>
                 <button onClick={() => setVisibility(false)} style={{backgroundColor:"#FFB2B2"}}>
-                    Quit
+                    Zpět
                 </button>
             </div>
         </>

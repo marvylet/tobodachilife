@@ -47,7 +47,7 @@ const Save: React.FC<ShowMenu> = ({setVisibility, money, hlad, hladValue, energi
     return (
         <>
             <button onClick={() => {setVisibility(false); setVisibility(false); download();}} style={{backgroundColor:"#FFB2B2"}}>
-                Quit
+                Ukončit
             </button>
         </>
     )

@@ -52,7 +52,7 @@ const MainMenu: React.FC<ShowMenu> = ({isDrawn}) => {
                     <img src="public/assets/title.png" alt="Logo" className={"logo"}/>
                 </div>
                 <button onClick={() => setIsVisible(true)} style={{backgroundColor:"#FFB2B2"}}>
-                    Start game
+                    Začít hru
                 </button>
                 <hr/>
                 <Load isDrawn={true} setVisibility={setIsVisible}
