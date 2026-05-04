@@ -34,6 +34,7 @@ const Save: React.FC<ShowMenu> = ({setVisibility, money, hlad, hladValue, energi
     }
 
  */
+
     const download = () =>{
         const fileData = money + "-" + hlad + "-" + hladValue + "-" + energie + "-" + energieValue + "-" + stesti + "-" + stestiValue + "-" + petNum;
         const blob = new Blob([fileData], { type: "text/plain" });

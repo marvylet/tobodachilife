@@ -7,10 +7,10 @@ import Save from "./Save.tsx";
 const MainScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility, petNum, money, setMoney, hlad, setHlad, hladValue, setHladValue, energie, setEnergie, energieValue, setEnergieValue, stesti, setStesti, stestiValue, setStestiValue} ) => {
     const [isVisible, setIsVisible] = useState<boolean>(false);
 
+    const [Konec, setKonec] = useState(false);
+
     const maxHlad = 50;
-
     const maxEnergie = 50;
-
     const maxStesti = 50;
 
     const [info, setInfo] = useState("Mazlicek zatim nebyl nakrmen, nebyl poslan spat a nehral jste si s nim.");
@@ -23,6 +23,24 @@ const MainScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility, petNum, money, 
         return () => clearTimeout(tick);
 
     }, [money]);
+
+    function UpdateKonec(){
+        if(hlad != null && energie != null && stesti != null && setHlad != null && setEnergie != null && setStesti != null) {
+            if (hlad <= 0 || energie <= 0 || stesti <= 0) {
+                setKonec(true);
+                setHlad(maxHlad);
+                setEnergie(maxEnergie);
+                setStesti(maxStesti);
+            }
+        }
+
+        if(Konec){
+            setVisibility(false); setVisibility(false);
+            console.log("Game Over");
+        }
+    }
+
+    UpdateKonec();
 
     /**
      * method for changing the pets attributes
