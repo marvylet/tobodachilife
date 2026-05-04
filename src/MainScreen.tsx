@@ -175,7 +175,10 @@ const MainScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility, petNum} ) => {
                             <button onClick={() => setIsVisible(true)} style={{backgroundColor:"#FFB2B2"}}>
                                 Obchod
                             </button>
-                            <Save isDrawn={true} setVisibility={setVisibility}></Save>
+                            <Save isDrawn={true} setVisibility={setVisibility}
+                                  money={money} hlad={hlad} hladValue={hladValue}
+                                  energie={energie} energieValue={energieValue}
+                                  stesti={stesti} stestiValue={stestiValue}></Save>
                         </div>
                     </div>
                 </div>

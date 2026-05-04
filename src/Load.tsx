@@ -24,8 +24,11 @@ function Load() {
         fileReader.onloadend = () =>{
             const data = fileReader.result;
             console.log(data);
-            if(data)
-            console.log(data.toString().split("-"));
+            if(data) {
+                //console.log(data.toString().split("-"));
+                const dataList = data.toString().split("-");
+                console.log(dataList);
+            }
         };
         if(file != null)
         fileReader.readAsText(file)
