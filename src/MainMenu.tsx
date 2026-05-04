@@ -44,12 +44,14 @@ const MainMenu: React.FC<ShowMenu> = ({isDrawn}) => {
                            energie={energie} setEnergie={setEnergie} energieValue={energieValue} setEnergieValue={setEnergieValue}
                            stesti={stesti} setStesti={setStesti} stestiValue={stestiValue} setStestiValue={setStestiValue}/>;
     }
+    console.log(import.meta.env.BASE_URL);
+
     return (
         <>
             <div className={"minu-Container"} style={{backgroundColor:"#FFF2D0"}}>
                 <div className={"logo"}>
                     {isDrawn}
-                    <img src={`${import.meta.env.BASE_URL}assets/title.png`} alt="Logo" className={"logo"}/>
+                    <img src={new URL('/assets/title.png', import.meta.url).href} alt="Logo" className={"logo"}/>
                 </div>
                 <button onClick={() => setIsVisible(true)} style={{backgroundColor:"#FFB2B2"}}>
                     Začít hru
