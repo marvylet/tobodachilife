@@ -15,8 +15,8 @@ interface PetProps {
 }
 
 function Pet (props: PetProps) {
-    const petImg = "public/assets/costume" + props.petNum + ".png";
-    const petRIPImg = "public/assets/costume" + props.petNum + "RIP.png";
+    const petImg = `${import.meta.env.BASE_URL}assets/costume${props.petNum}.png`;
+    const petRIPImg = `${import.meta.env.BASE_URL}assets/costume${props.petNum}RIP.png`;
 
     const energieHurt = props.maxEnergie / 4;
     const stestiHurt = props.maxStesti / 4;

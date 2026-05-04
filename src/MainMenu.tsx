@@ -44,7 +44,6 @@ const MainMenu: React.FC<ShowMenu> = ({isDrawn}) => {
                            energie={energie} setEnergie={setEnergie} energieValue={energieValue} setEnergieValue={setEnergieValue}
                            stesti={stesti} setStesti={setStesti} stestiValue={stestiValue} setStestiValue={setStestiValue}/>;
     }
-    console.log(import.meta.env.BASE_URL);
 
     return (
         <>

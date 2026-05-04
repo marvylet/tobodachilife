@@ -55,19 +55,19 @@ const Shop: React.FC<ShowMenu> = ({isDrawn, setVisibility, money, setMoney, setH
                         <div className={"shopInbox"}>
                             <button onClick={() => Buffs1(10, 1, 1.5)}>
                                 {isDrawn}
-                                <img src="public/assets/Food/food1.png" alt=""/>
+                                <img src={new URL('/assets/Food/food1.png', import.meta.url).href} alt="jidlo 1"/>
                             </button>
                             <button onClick={() => Buffs1(25, 1, 1.75)}>
-                                <img src="public/assets/Food/food2.png" alt=""/>
+                                <img src={new URL('/assets/Food/food2.png', import.meta.url).href} alt="jidlo 2"/>
                             </button>
                         </div>
                         <div className={"shopInbox"}>
                             <button onClick={() => Buffs1(50, 1, 2)}>
                                 {isDrawn}
-                                <img src="public/assets/Food/food3.png" alt=""/>
+                                <img src={new URL('/assets/Food/food3.png', import.meta.url).href} alt="jidlo 3"/>
                             </button>
                             <button onClick={() => Buffs1(75, 1, 2.25)}>
-                                <img src="public/assets/Food/food4.png" alt=""/>
+                                <img src={new URL('/assets/Food/food4.png', import.meta.url).href} alt="jidlo 4"/>
                             </button>
                         </div>
                     </div>
@@ -75,19 +75,19 @@ const Shop: React.FC<ShowMenu> = ({isDrawn, setVisibility, money, setMoney, setH
                         <div className={"shopInbox"}>
                             <button onClick={() => Buffs1(10, 3, 1.5)}>
                                 {isDrawn}
-                                <img src="public/assets/Rest/rest1.png" alt=""/>
+                                <img src={new URL('/assets/Rest/rest1.png', import.meta.url).href} alt="odpocinek 1"/>
                             </button>
                             <button onClick={() => Buffs1(25, 3, 1.75)}>
-                                <img src="public/assets/Rest/rest2.png" alt=""/>
+                                <img src={new URL('/assets/Rest/rest2.png', import.meta.url).href} alt="odpocinek 2"/>
                             </button>
                         </div>
                         <div className={"shopInbox"}>
                             <button onClick={() => Buffs1(50, 3, 2)}>
                                 {isDrawn}
-                                <img src="public/assets/Rest/rest3.png" alt=""/>
+                                <img src={new URL('/assets/Rest/rest3.png', import.meta.url).href} alt="odpocinek 3"/>
                             </button>
                             <button onClick={() => Buffs1(75, 3, 2.25)}>
-                                <img src="public/assets/Rest/rest4.png" alt=""/>
+                                <img src={new URL('/assets/Rest/rest4.png', import.meta.url).href} alt="odpocinek 4"/>
                             </button>
                         </div>
                     </div>
@@ -95,19 +95,19 @@ const Shop: React.FC<ShowMenu> = ({isDrawn, setVisibility, money, setMoney, setH
                         <div className={"shopInbox"}>
                             <button onClick={() => Buffs1(10, 2, 1.5)}>
                                 {isDrawn}
-                                <img src="public/assets/Toys/toy1.png" alt=""/>
+                                <img src={new URL('/assets/Toys/toy1.png', import.meta.url).href} alt="hracka 1"/>
                             </button>
                             <button onClick={() => Buffs1(10, 2, 1.75)}>
-                                <img src="public/assets/Toys/toy2.png" alt=""/>
+                                <img src={new URL('/assets/Toys/toy2.png', import.meta.url).href} alt="hracka 2"/>
                             </button>
                         </div>
                         <div className={"shopInbox"}>
                             <button onClick={() => Buffs1(10, 2, 2)}>
                                 {isDrawn}
-                                <img src="public/assets/Toys/toy3.png" alt=""/>
+                                <img src={new URL('/assets/Toys/toy3.png', import.meta.url).href} alt="hracka 3"/>
                             </button>
                             <button onClick={() => Buffs1(10, 2, 2.25)}>
-                                <img src="public/assets/Toys/toy4.png" alt=""/>
+                                <img src={new URL('/assets/Toys/toy4.png', import.meta.url).href} alt="hracka 4"/>
                             </button>
                         </div>
                     </div>
