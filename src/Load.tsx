@@ -17,10 +17,8 @@ interface PetProps {
 
  */
 
-import type {ShowMenu} from "./types.ts";
+function Load() {
 
-const Save: React.FC<ShowMenu> = ({setVisibility } ) => {
-/*
     const handleFileSelected = (file? : Blob) => {
         const fileReader = new FileReader();
         fileReader.onloadend = () =>{
@@ -33,24 +31,14 @@ const Save: React.FC<ShowMenu> = ({setVisibility } ) => {
         fileReader.readAsText(file)
     }
 
- */
-    const download = (data : string) =>{
-        const fileData = data;
-        const blob = new Blob([fileData], { type: "text/plain" });
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement("a");
-        link.download = "user-info.txt";
-        link.href = url;
-        link.click();
-    };
-
     return (
         <>
-            <button onClick={() => {setVisibility(false); setVisibility(false); download("test String");}} style={{backgroundColor:"#FFB2B2"}}>
-                Quit
-            </button>
+            <input type={"file"} max={1} min={1} onChange={e => {
+                if(e.target.files != null)
+                handleFileSelected(e.target.files[0])
+            }} accept='.txt' style={{backgroundColor:"#FFB2B2"}}/>
         </>
     )
 }
 
-export default Save
+export default Load

@@ -1,6 +1,7 @@
 import type {ShowMenu} from "./types.ts";
 import {useState} from "react";
 import InfoScreen from "./InfoScreen.tsx";
+import Load from "./Load.tsx";
 
 const MainMenu: React.FC<ShowMenu> = ({isDrawn}) => {
     const [isVisible, setIsVisible] = useState<boolean>(false);
@@ -18,7 +19,7 @@ const MainMenu: React.FC<ShowMenu> = ({isDrawn}) => {
                     Start game
                 </button>
                 <hr/>
-                <input type={"file"} style={{backgroundColor:"#FFB2B2"}}/>
+                <Load></Load>
             </div>
         </>
     )

@@ -2,6 +2,7 @@ import type {ShowMenu} from "./types.ts";
 import {useEffect, useState} from "react";
 import Shop from "./Shop.tsx";
 import Pet from "./Pet.tsx";
+import Save from "./Save.tsx";
 
 const MainScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility, petNum} ) => {
     const [isVisible, setIsVisible] = useState<boolean>(false);
@@ -174,9 +175,7 @@ const MainScreen: React.FC<ShowMenu> = ({isDrawn, setVisibility, petNum} ) => {
                             <button onClick={() => setIsVisible(true)} style={{backgroundColor:"#FFB2B2"}}>
                                 Obchod
                             </button>
-                            <button onClick={() => {setVisibility(false); setVisibility(false)}} style={{backgroundColor:"#FFB2B2"}}>
-                                Quit
-                            </button>
+                            <Save isDrawn={true} setVisibility={setVisibility}></Save>
                         </div>
                     </div>
                 </div>
